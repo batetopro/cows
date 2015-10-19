@@ -1,0 +1,44 @@
+extends ./layout.jade
+
+block content
+  img(src="#{logourl}",height="100px",id="logo")
+  div(class="panel panel-default")
+    div(class="panel-heading") Create a new game
+    div(class="panel-body")
+      ul(class="list-group",id="game-type")
+        li(class="list-group-item") 
+          a(href="#", id="training") Training
+        li(class="list-group-item")
+          a(href="#", id="single_player") Against the terminal (human vs. PC)
+        li(class="list-group-item")
+          a(href="#", id="peer2peer") Peer-2-peer (human vs. human)
+        li(class="list-group-item")
+          a(href="#", id="token-ring") Token ring (guess the server's number)
+    div(class="panel-footer") 
+      a(href="/games?awaiting=1") Join awaiting game
+
+  div(class="modal fade",id="modal-token-ring")
+    div(class="modal-dialog")
+      div(class="modal-content")
+        div(class="modal-header")
+          button(type="button",class="close",data-dismiss="modal",aria-label="Close")
+            span(aria-hidden="true") &times;
+          h4(class="modal-title") Token ring
+        div(class="modal-body")
+          input(class="form-control",type="text",placeholder="Name of the game",id="token-ring-name")
+          input(class="form-control",type="text",placeholder="Number of players [3,8]",id="token-ring-players")
+        div(class="modal-footer")
+          button(type="button",class="btn btn-primary",id="token-ring-create") Create
+
+  div(class="modal fade",id="modal-peer2peer")
+    div(class="modal-dialog")
+      div(class="modal-content")
+        div(class="modal-header")
+          button(type="button",class="close",data-dismiss="modal",aria-label="Close")
+            span(aria-hidden="true") &times;
+          h4(class="modal-title") Peer-2-peer
+        div(class="modal-body")
+          input(class="form-control",type="text",placeholder="Name of the game",id="peer2peer-name")
+        div(class="modal-footer")
+          button(type="button",class="btn btn-primary",id="peer2peer-create") Create
+

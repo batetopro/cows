@@ -1,0 +1,11 @@
+extends ./layout.jade
+
+block content
+	img(src="#{logourl}",height="200px",id="logo")
+	div(class="panel panel-default register-panel")
+		div(class="panel-heading") Register to start the game
+		div(class="panel-body")
+			form(method=GET,action="#")
+				div(class="input-group")
+					input(type="input",class="form-control",placeholder="Enter your name",id="register-name",aria-describedby="player-number-submit",autofocus)
+					span(class="input-group-addon",id="register-go") GO

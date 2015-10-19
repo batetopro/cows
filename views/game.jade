@@ -1,0 +1,75 @@
+extends ./layout.jade
+
+block content
+	div(id="game")
+
+	script(id="players-template",type="text/x-handlebars-template")
+		div(class="panel panel-default")
+			div(class="panel-heading") {{name}}
+			div(class="panel-body")
+				div(class="game-header")
+				hr
+				ul(id="player-list",class="list-group")
+				hr
+				div(class="row")
+					div(class="col-md-12")
+						div(class="pull-left",id="players-button-left")
+						div(class="pull-right",id="players-button-right")
+
+	script(id="battlefield-template",type="text/x-handlebars-template")
+		div(class="panel panel-default")
+			div(class="panel-heading") {{name}}
+			div(class="panel-body")
+				div(class="game-header")
+				div(class="row")
+					div(class="col-md-8")
+						hr
+						div(class="input-group")
+							input(type="input",class="form-control",placeholder="Enter your move",id="player-number",aria-describedby="player-number-submit",autofocus)
+							span(class="input-group-addon",id="player-number-submit") GO
+						div(class="progress")
+							div(class="progress-bar",id="game-turn",style="")
+						hr
+						strong Your moves
+						div(class="move-legend row")
+							div(class="col-md-12")
+								span(class="score bull") 
+								span Bull
+								span(class="score cow") 
+								span Cow
+								span(class="score")
+								span Nothing
+						div(id="your-moves")
+							ul(id="your-moves-list",class="list-group")
+					div(class="col-md-4")
+						hr
+						span(id="player-secret",title="Your number") ####
+						hr
+						strong Players
+						div(id="players")
+							ul(id="player-list",class="list-group")
+						hr
+						strong Others moves
+						ul(id="others-moves-list",class="list-group")
+				div(class="row")
+					div(class="col-md-12")
+						hr
+						strong Notes
+						textarea(rows="8",cols="5",class="form-control")
+
+	script(id="game-header-template",type="text/x-handlebars-template")
+		div(class="row")
+			div(class="col-md-12")
+				small(class="game-type") {{type}}
+				small(class="game-players") {{players}} / {{max_players}}
+
+	script(id="game-player-item-template",type="text/x-handlebars-template")
+		li(class="list-group-item")
+			strong {{name}}
+			small {{{kick}}}
+			small {{type}}
+
+
+	script.
+		var BC = BC || {};
+		var game = '#{game}';

@@ -1,0 +1,19 @@
+extends ./layout.jade
+
+block content
+	img(src="/static/img/cow.png",height="100px",id="logo")
+	div(class="panel panel-default")
+		div(class="panel-heading") Players
+		div(class="panel-body")
+			ul(id="player-list",class="list-group")
+				each player in players
+					li(class="list-group-item")
+						strong #{player.name}
+						if player.type == human
+							small HUMAN
+						else
+							small PC
+						if player.gameid == ''
+							small FREE
+						else
+							small PLAYING

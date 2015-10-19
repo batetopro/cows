@@ -1,0 +1,80 @@
+* {margin: 0; padding:0;}
+ul{margin: 20px; margin-top: 0;}
+
+.main-container{
+	margin: 15px auto;
+	border-radius: 15px;
+	border: 1px solid #333;
+	padding: 0;
+}
+
+
+.header, .navbar{
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+.header h1{
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+.content{
+	margin: 15px;
+}
+
+
+.panel-heading, .panel-footer{text-align: center;}
+.register-panel{text-align: center;}
+.register-panel button{width: 100%;}
+
+#player-list small,
+#game-list small
+{
+	float: right; 
+	margin-left: 5px; 
+	line-height: 19px;
+	text-transform: uppercase;
+}
+
+
+.list-group{margin: 0;}
+#game-type .list-group-item{padding: 0;}
+#game-type .list-group-item a{display: block; padding: 10px 15px;}
+.modal-title, .modal-footer{text-align: center;}
+
+.game-header small{text-transform: uppercase;}
+.game-header .game-type{float: left;}
+.game-header .game-players{float: right;}
+
+#player-secret{font-size: 24px; display: block; text-align: center; font-weight: 700;}
+
+
+#your-moves{max-height: 500px; overflow-y: auto;}
+#players{max-height: 200px; overflow-y: auto;}
+#others-moves-list{max-height: 250px; overflow-y: auto;}
+
+
+.score-placeholder{float: right; margin: 5px 0; }
+span.score
+{ display: block; width: 9px; height: 9px; border-radius: 5px;  border: 1px solid #999; background-color: #aaa; margin-right: 5px; float: left;}
+span.cow{background-color: white;}
+span.bull{background-color: black;}
+
+#logo{ margin: 0 auto; margin-bottom: 15px; display: block; }
+
+
+
+
+.navbar-right {float: right!important;margin-right: 15px;}
+.navbar-nav>li {float: left;}
+
+.move-legend{margin-bottom: 5px;}
+.move-legend span {float: left; font-size: 13px; line-height: 13px;}
+.move-legend span.score{ margin-top: 2px; margin-left: 5px; }
+
+
+.progress{height: 10px; margin-top:15px;}
+.progress > div{height:10px;}

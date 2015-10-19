@@ -1,0 +1,25 @@
+extends ./layout.jade
+
+block content
+	img(src="#{logourl}",height="100px",id="logo")
+	div(class="panel panel-default")
+		div(class="panel-heading") Games
+		div(class="panel-body")
+			ul(id="game-list",class="list-group")
+				each game in games
+					li(class="list-group-item")
+						strong 
+							a(href="game?gameid=#{game.id}") #{game.name}
+						
+						small #{game.players.length} / #{game.max_players}
+
+						if game.type == training
+							small T
+						else if game.type == single_player
+							small SP
+						else if game.type == token_ring
+							small TRing
+						else
+							small P2P
+		div(class="panel-footer")
+				a(href="/") Create a new game
